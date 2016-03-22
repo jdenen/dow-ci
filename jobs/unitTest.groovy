@@ -29,7 +29,7 @@ rubies.each { ruby ->
 
     steps {
       shell("bundle check || bundle install")
-      shell("bundle exec rspec -f RspecJunitFormatter -o result/ruby-${ruby}-unit-test.xml -f progress")
+      shell("bundle exec rake spec:unit")
     }
 
     publishers {

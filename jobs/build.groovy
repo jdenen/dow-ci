@@ -17,12 +17,16 @@ rubies.each { ruby ->
 	}
       }
 
+      wrappers {
+	rbenv("${ruby}") {
+	  ignoreLocalVersion()
+	  gems("bundler", "rake")
+	}
+      }
+
       steps {
-        shell("curl -L -O --fail http://d6r77u77i8pq3.cloudfront.net/releases/traveling-ruby-20150715-${ruby}-${pf}.tar.gz")
-        shell("mkdir -p dow-${ruby}-${pf}/lib/ruby")
-        shell("tar -xzf traveling-ruby-20150715-${ruby}-${pf}.tar.gz -C dow-${ruby}-${pf}/lib/ruby")
-        shell("mv lib/* dow-${ruby}-${pf}/lib")
-        shell("cp wrapper.sh dow-${ruby}-${pf}/dow")
+	shell("bundle check || bundle install")
+	shell("bundle exec rake package:${pf}")
         shell("tar -czf dow-${ruby}-${pf}.tar.gz dow-${ruby}-${pf}")
       }
       
