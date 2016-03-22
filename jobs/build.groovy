@@ -29,7 +29,7 @@ rubies.each { ruby ->
       publishers {
         archiveArtifacts {
           pattern("dow-${ruby}-${pf}.tar.gz")
-          onlyIfSuccessful
+          onlyIfSuccessful()
 	}
 	slackNotifications {
 	  projectChannel("#general")

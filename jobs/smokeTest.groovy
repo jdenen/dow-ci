@@ -49,6 +49,10 @@ rubies.each { ruby ->
 	notifyRepeatedFailure()
 	notifyBackToNormal()
       }
+      archiveArtifacts {
+	pattern("dow-${ruby}-osx.tar.gz")
+	onlyIfSuccessful()
+      }
     }
   }
 }
