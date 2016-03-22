@@ -10,9 +10,9 @@ rubies.each { ruby ->
 	remote {
 	  github("jdenen/dow")
 	}
-      }
-      extensions {
-	cleanBeforeCheckout()
+	extensions {
+	  cleanBeforeCheckout()
+	}
       }
     }
 
