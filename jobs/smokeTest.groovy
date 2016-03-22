@@ -37,7 +37,7 @@ rubies.each { ruby ->
       shell("tar -xzf dow-${ruby}-osx.tar.gz")
       shell("mv dow-${ruby}-osx/* spec/support")
       shell("bundle check || bundle install")
-      shell("TEST_ARTIFACT=1 bundle exec rspec -f RspecJunitFormatter -o result/dow-${ruby-osx-smoke-test.xml -f progress}")
+      shell("TEST_ARTIFACT=1 bundle exec rspec -f RspecJunitFormatter -o result/dow-${ruby}-osx-smoke-test.xml -f progress")
     }
 
     publishers {
