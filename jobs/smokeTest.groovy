@@ -44,7 +44,6 @@ rubies.each { ruby ->
       archiveJunit("result/*.xml")
       slackNotifications {
 	projectChannel("#general")
-	teamDomain("johnson-ci")
 	notifyFailure()
 	notifyRepeatedFailure()
 	notifyBackToNormal()

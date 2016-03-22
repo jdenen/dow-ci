@@ -33,7 +33,6 @@ rubies.each { ruby ->
 	}
 	slackNotifications {
 	  projectChannel("#general")
-	  teamDomain("johnson-ci")
 	  notifyFailure()
 	  notifyRepeatedFailure()
 	  notifyBackToNormal()
