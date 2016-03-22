@@ -10,7 +10,7 @@ rubies.each { ruby ->
 
     steps {
       copyArtifacts("ruby-${ruby}-osx-smoke-test") {
-	includePattern("*.gz")
+	includePatterns("*.gz")
 	buildSelector {
 	  latestSuccessful(true)
 	}
