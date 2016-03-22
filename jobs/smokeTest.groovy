@@ -21,7 +21,7 @@ rubies.each { ruby ->
 
     wrappers {
       rbenv("${ruby}") {
-	ignoreLocalVersions()
+	ignoreLocalVersion()
 	gems("bundler", "rake")
       }
     }
