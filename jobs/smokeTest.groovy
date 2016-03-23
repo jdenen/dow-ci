@@ -33,9 +33,7 @@ rubies.each { ruby ->
 	  latestSuccessful(true)
 	}
       }
-      shell("mkdir spec/support")
       shell("tar -xzf dow-${ruby}-osx.tar.gz")
-      shell("mv dow-${ruby}-osx/* spec/support")
       shell("bundle check || bundle install")
       shell("bundle exec rake spec:smoke")
     }
